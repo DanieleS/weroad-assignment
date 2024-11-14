@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest"
   },
   "dependencies": {
     "nuxt": "^3.14.159",
@@ -16,10 +17,15 @@
   },
   "packageManager": "pnpm@9.13.1+sha512.5ac37545851c55ec58521b6c285db6f848f93ca70889beb4145f5b40fe234e4ea4faee4dad12ac5c139e494374c65d9c3a6ec9a25954378fa286a250e68d2f20",
   "devDependencies": {
+    "@nuxt/test-utils": "^3.14.4",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
+    "happy-dom": "^15.11.6",
+    "playwright-core": "^1.48.2",
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.15",
+    "vitest": "^2.1.5"
   }
 }
