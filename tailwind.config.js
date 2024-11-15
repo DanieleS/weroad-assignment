@@ -10,17 +10,6 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
-  theme: {
-    extend: {
-      colors: {
-        primary: colors.blue,
-        secondary: colors.gray,
-        accent: colors.rose,
-        success: colors.green,
-        warning: colors.yellow,
-        danger: colors.red,
-      },
-    },
-  },
+  theme: {},
   plugins: [],
 };

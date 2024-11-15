@@ -9,5 +9,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/test-utils/module"],
+  modules: ["@nuxt/ui", "@nuxt/test-utils/module"],
 });
