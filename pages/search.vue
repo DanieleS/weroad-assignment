@@ -13,5 +13,7 @@
 <script setup lang="ts">
 defineComponent({ name: "index" });
 
+usePageTitle("Search");
+
 const searchResult = await useSearch();
 </script>
