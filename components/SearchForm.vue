@@ -1,20 +1,27 @@
 <template>
-  <ClientOnly>
-    <UForm :state="searchState" @submit="onSubmit">
-      <UFormGroup label="Destination">
-        <USelectMenu v-model="destination" :options />
-      </UFormGroup>
-      <UFormGroup label="Dates">
-        <UPopover :popper="{ placement: 'bottom-start' }">
-          <UButton>{{ formatDateRange(dateRange) ?? "Select dates" }}</UButton>
-          <template #panel="{ close }">
-            <InputDateRangePicker v-model="dateRange" @close="close" />
-          </template>
-        </UPopover>
-      </UFormGroup>
-      <UButton type="submit">Search</UButton>
-    </UForm>
-  </ClientOnly>
+  <UForm :state="searchState" @submit="onSubmit">
+    <UFormGroup label="Destination">
+      <USelectMenu
+        v-model="destination"
+        value-attribute="value"
+        option-attribute="title"
+        :options
+      />
+    </UFormGroup>
+    <UFormGroup label="Dates">
+      <UPopover :popper="{ placement: 'bottom-start' }">
+        <ClientOnly
+          ><UButton>
+            {{ formatDateRange(dateRange) ?? "Select dates" }}
+          </UButton>
+        </ClientOnly>
+        <template #panel="{ close }">
+          <InputDateRangePicker v-model="dateRange" @close="close" />
+        </template>
+      </UPopover>
+    </UFormGroup>
+    <UButton type="submit">{{ $t("search.submit") }}</UButton>
+  </UForm>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +40,7 @@ type Props = {
 
 const props = defineProps<Props>();
 
+const { t } = useI18n();
 const router = useRouter();
 
 type SearchState = {
@@ -63,7 +71,14 @@ async function onSubmit(event: FormSubmitEvent<SearchState>) {
   }
 }
 
-const options = ["Europe", "Asia", "America", "Africa", "Oceania"];
+const options = [
+  { value: "europe", title: t("search.area.europe") },
+  { value: "asia", title: t("search.area.asia") },
+  { value: "africa", title: t("search.area.africa") },
+  { value: "northAmerica", title: t("search.area.northAmerica") },
+  { value: "southAmerica", title: t("search.area.southAmerica") },
+  { value: "oceania", title: t("search.area.oceania") },
+];
 
 const formatDateRange = (
   dateRange: DatePickerRangeObject | undefined,

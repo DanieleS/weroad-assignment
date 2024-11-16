@@ -9,5 +9,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/ui", "@nuxt/test-utils/module"],
+  i18n: {
+    vueI18n: "./i18n/i18n.config.ts",
+  },
+  modules: ["@nuxt/ui", "@nuxt/test-utils/module", "@nuxtjs/i18n"],
 });

@@ -1,0 +1,15 @@
+{
+  "title": "WeRoad Assignment",
+  "search": {
+    "dateRange": "From/To",
+    "submit": "Search",
+    "area": {
+      "europe": "Europe",
+      "asia": "Asia",
+      "africa": "Africa",
+      "northAmerica": "North America",
+      "southAmerica": "South America",
+      "oceania": "Oceania"
+    }
+  }
+}
