@@ -1,6 +1,6 @@
-import { Travel } from "~/common/travels";
+import type { Travel } from "~/common/travels";
 
-const mockTravels: Travel[] = [
+export const mockTravels: Travel[] = [
   {
     id: "6d048c69-36c1-406e-a869-1dbca850c838",
     name: "Paris",
@@ -182,12 +182,3 @@ const mockTravels: Travel[] = [
     picture: "/images/travels/buenosaires.png",
   },
 ];
-
-export default defineEventHandler(async () => {
-  // Pick 10 random travels
-  const response = mockTravels.sort(() => Math.random() - 0.5).slice(0, 10);
-
-  await sleep(1000); // Simulate network delay
-
-  return { items: response };
-});
