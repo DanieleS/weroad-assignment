@@ -1,5 +1,4 @@
 import { Travel } from "~/common/travels";
-import { sleep } from "~/utils/async";
 
 const mockTravels: Travel[] = [
   {
