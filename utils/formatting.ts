@@ -1,9 +1,3 @@
-const dateFormat = new Intl.DateTimeFormat(undefined, {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-
 /**
  * Format a date as a string using the user's locale.
  *
@@ -11,6 +5,12 @@ const dateFormat = new Intl.DateTimeFormat(undefined, {
  * @returns The formatted date.
  */
 export const formatDate = (date: Date) => {
+  const dateFormat = new Intl.DateTimeFormat(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return dateFormat.format(date);
 };
 

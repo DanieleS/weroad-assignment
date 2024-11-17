@@ -2,7 +2,7 @@
   "editor.gotoLocation.multipleDefinitions": "goto",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.nuxt.test.ts",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
     "*.jsx": "${capture}.js",
     "*.tsx": "${capture}.ts",
