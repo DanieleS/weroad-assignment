@@ -13,7 +13,7 @@
         />
         <CheckoutStepPayment
           :is-active="currentStep === 'payment'"
-          @step:complete="onSubmit('payment', 'travelers', $event)"
+          @step:complete="onSubmit('payment', 'done', $event)"
         />
       </div>
       <div>
@@ -42,7 +42,7 @@ usePageTitle(
   }),
 );
 
-type Step = "travelers" | "userInfo" | "payment";
+type Step = "travelers" | "userInfo" | "payment" | "done";
 
 const currentStep = ref<Step>("travelers");
 
@@ -52,8 +52,16 @@ const checkoutState = ref<Partial<Checkout>>({
   },
 });
 
-const onSubmit = <T extends Step>(from: T, to: Step, data: Checkout[T]) => {
+const onSubmit = <T extends Exclude<Step, "done">>(
+  from: T,
+  to: Step,
+  data: Checkout[T],
+) => {
   checkoutState.value[from] = data;
-  currentStep.value = to;
+  if (to === "done") {
+    navigateTo("/checkout/success");
+  } else {
+    currentStep.value = to;
+  }
 };
 </script>
