@@ -11,5 +11,7 @@
       "southAmerica": "South America",
       "oceania": "Oceania"
     }
+  "errors": {
+    "generic": "An unknown error occurred"
   }
 }
