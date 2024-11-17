@@ -10,13 +10,17 @@
     </UFormGroup>
     <UFormGroup label="Dates">
       <UPopover :popper="{ placement: 'bottom-start' }">
-        <ClientOnly
-          ><UButton>
+        <ClientOnly>
+          <UButton>
             {{ formatDateRange(dateRange) ?? "Select dates" }}
           </UButton>
         </ClientOnly>
         <template #panel="{ close }">
-          <InputDateRangePicker v-model="dateRange" @close="close" />
+          <InputDateRangePicker
+            v-model="dateRange"
+            @close="close"
+            :min-date="new Date()"
+          />
         </template>
       </UPopover>
     </UFormGroup>
