@@ -1,5 +1,5 @@
 <template>
-  <CheckoutStep title="Travelers">
+  <CheckoutStep title="Travelers" :is-active>
     <UForm :state @submit="onSubmit">
       <div>How many travelers are you booking for?</div>
       <InputNumber v-model="state.travelers" :min="1" />
@@ -13,6 +13,12 @@ import type { FormSubmitEvent } from "#ui/types";
 import type { TravelersStep } from "~/common/checkout";
 
 defineComponent({ name: "Travelers" });
+
+type Props = {
+  isActive: boolean;
+};
+
+defineProps<Props>();
 
 type Emits = {
   "step:complete": [state: { travelers: number }];

@@ -10,20 +10,11 @@ export type UserInfoStep = {
 };
 
 export type PaymentStep = {
-  paymentMethod: PaymentMethod;
+  cardNumber: string;
+  cardHolder: string;
+  expirationDate: string;
+  cvv: string;
 };
-
-export type PaymentMethod =
-  | {
-      type: "creditCard";
-      cardNumber: string;
-      cardHolder: string;
-      expirationDate: string;
-      cvv: string;
-    }
-  | {
-      type: "paypal";
-    };
 
 export type Checkout = {
   travelers: TravelersStep;
