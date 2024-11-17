@@ -3,6 +3,11 @@
     <h1>Checkout</h1>
     <FetchResult :result="travel" #="{ data }">
       <div>
+        <CheckoutStepTravelers
+          @step:complete="checkoutState.travelers = $event"
+        />
+      </div>
+      <div>
         {{ data.name }}
       </div>
     </FetchResult>
@@ -10,6 +15,8 @@
 </template>
 
 <script setup lang="ts">
+import type { Checkout } from "~/common/checkout";
+
 defineComponent({ name: "checkout" });
 
 definePageMeta({
@@ -25,4 +32,10 @@ usePageTitle(
     destination: travel.data.value?.name,
   }),
 );
+
+const checkoutState = ref<Partial<Checkout>>({
+  travelers: {
+    travelers: 1,
+  },
+});
 </script>
