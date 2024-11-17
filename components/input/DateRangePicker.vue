@@ -44,7 +44,6 @@ const attrs = {
   transparent: true,
   borderless: true,
   color: "primary",
-  "is-dark": { selector: "html", darkClass: "dark" },
   "first-day-of-week": 2,
 };
 
