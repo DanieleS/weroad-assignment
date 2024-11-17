@@ -1,5 +1,6 @@
 <template>
   <DatePicker
+    v-if="range"
     v-bind="{ ...attrs, ...$attrs }"
     v-model.range="date"
     :columns="2"
@@ -8,24 +9,38 @@
     :max-date="maxDate"
     @dayclick="onDayClick"
   />
+  <DatePicker
+    v-else
+    v-bind="{ ...attrs, ...$attrs }"
+    v-model="date"
+    :columns="1"
+    :min-date="minDate"
+    :max-date="maxDate"
+    @dayclick="onDayClick"
+  />
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" generic="Range extends boolean = false">
 import { DatePicker } from "v-calendar";
 import "v-calendar/dist/style.css";
-import type { DatePickerRangeObject } from "v-calendar/dist/types/src/use/datePicker.js";
+import type {
+  DatePickerRangeObject,
+  DatePickerDate,
+} from "v-calendar/dist/types/src/use/datePicker.js";
 import type { DatePartsRules } from "v-calendar/dist/types/src/utils/date/helpers.js";
 
 defineComponent({ name: "DateRangePicker" });
 
 type Props = {
+  range?: Range;
   minDate?: Date;
   maxDate?: Date;
 };
 
 defineProps<Props>();
 
-const model = defineModel<DatePickerRangeObject>();
+const model =
+  defineModel<Range extends true ? DatePickerRangeObject : DatePickerDate>();
 
 const emit = defineEmits(["close"]);
 

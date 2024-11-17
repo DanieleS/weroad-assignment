@@ -16,7 +16,8 @@
           </UButton>
         </ClientOnly>
         <template #panel="{ close }">
-          <InputDateRangePicker
+          <InputDatePicker
+            :range="true"
             v-model="dateRange"
             @close="close"
             :min-date="new Date()"

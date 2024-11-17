@@ -4,6 +4,26 @@
       <UFormGroup label="Full name" name="fullName">
         <UInput v-model="state.fullName" />
       </UFormGroup>
+      <UFormGroup label="Date of birth" name="dateOfBirth">
+        <UPopover :popper="{ placement: 'bottom-start' }">
+          <ClientOnly>
+            <UButton>
+              {{
+                state.dateOfBirth
+                  ? formatDate(state.dateOfBirth)
+                  : "Select dates"
+              }}
+            </UButton>
+          </ClientOnly>
+          <template #panel="{ close }">
+            <InputDatePicker
+              v-model="state.dateOfBirth"
+              @close="close"
+              :max-date="new Date()"
+            />
+          </template>
+        </UPopover>
+      </UFormGroup>
       <UFormGroup label="Email" name="email">
         <UInput v-model="state.email" type="email" />
       </UFormGroup>
