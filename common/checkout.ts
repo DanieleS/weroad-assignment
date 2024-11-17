@@ -1,20 +1,15 @@
-export type TravelersStep = {
-  travelers: number;
-};
+import { z } from "zod";
+import {
+  PaymentStepZ,
+  TravelersStepZ,
+  UserInfoStepZ,
+} from "~/schemas/checkout";
 
-export type UserInfoStep = {
-  fullName: string;
-  dateOfBirth: Date;
-  email: string;
-  phoneNumber: string;
-};
+export type TravelersStep = z.infer<typeof TravelersStepZ>;
 
-export type PaymentStep = {
-  cardNumber: string;
-  cardHolder: string;
-  expirationDate: string;
-  cvv: string;
-};
+export type UserInfoStep = z.infer<typeof UserInfoStepZ>;
+
+export type PaymentStep = z.infer<typeof PaymentStepZ>;
 
 export type Checkout = {
   travelers: TravelersStep;

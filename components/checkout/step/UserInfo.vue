@@ -1,13 +1,13 @@
 <template>
   <CheckoutStep title="Your info" :is-active>
-    <UForm :state @submit="onSubmit">
-      <UFormGroup label="Full name">
+    <UForm :schema="UserInfoStepZ" :state @submit="onSubmit">
+      <UFormGroup label="Full name" name="fullName">
         <UInput v-model="state.fullName" />
       </UFormGroup>
-      <UFormGroup label="Email">
+      <UFormGroup label="Email" name="email">
         <UInput v-model="state.email" type="email" />
       </UFormGroup>
-      <UFormGroup label="Phone number">
+      <UFormGroup label="Phone number" name="phoneNumber">
         <UInput v-model="state.phoneNumber" type="tel" />
       </UFormGroup>
 
@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from "#ui/types";
 import type { UserInfoStep } from "~/common/checkout";
+import { UserInfoStepZ } from "~/schemas/checkout";
 
 defineComponent({ name: "UserInfo" });
 
