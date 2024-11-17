@@ -11,6 +11,10 @@
       "southAmerica": "South America",
       "oceania": "Oceania"
     }
+  },
+  "checkout": {
+    "title": "Travel to {destination}"
+  },
   "errors": {
     "generic": "An unknown error occurred"
   }

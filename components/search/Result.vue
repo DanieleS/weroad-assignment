@@ -3,6 +3,7 @@
     <h2>{{ travel.name }}</h2>
     <p>{{ travel.description }}</p>
     <p>{{ formatCurrency(travel.pricePerPerson, "EUR") }}</p>
+    <UButton :to="checkoutUrl">Go to checkout</UButton>
   </article>
 </template>
 
@@ -16,5 +17,9 @@ type Props = {
   travel: Travel;
 };
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const checkoutUrl = computed(() => {
+  return `/checkout/${props.travel.id}`;
+});
 </script>
