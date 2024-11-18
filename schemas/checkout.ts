@@ -8,7 +8,7 @@ export const TravelersStepZ = z.object({
 
 export const UserInfoStepZ = z.object({
   fullName: z.string().min(1),
-  dateOfBirth: z.date().max(new Date()).nullish(),
+  dateOfBirth: z.date().max(new Date()),
   email: z.string().email(),
   phoneNumber: z.string().refine(isMobilePhone),
 });

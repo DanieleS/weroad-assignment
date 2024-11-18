@@ -8,7 +8,7 @@
         <UInput v-model="state.cardNumber" />
       </UFormGroup>
       <UFormGroup label="Expiration Date" name="expirationDate">
-        <UInput v-model="state.expirationDate" />
+        <InputCardExpiration v-model="state.expirationDate" />
       </UFormGroup>
       <UFormGroup label="CVV" name="cvv">
         <UInput v-model="state.cvv" />

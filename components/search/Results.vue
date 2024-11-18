@@ -1,8 +1,8 @@
 <template>
   <section>
     <ul>
-      <li v-for="result in results" :key="result.id">
-        <SearchResult :travel="result" />
+      <li v-for="(result, idx) in results" :key="result.id">
+        <SearchResult :travel="result" :data-testid="`search-result-${idx}`" />
       </li>
     </ul>
   </section>
