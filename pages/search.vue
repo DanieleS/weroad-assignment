@@ -1,11 +1,11 @@
 <template>
   <div>
     <SearchForm navigation="replace" />
-    <FetchResult :result="searchResult" #="{ data, status }">
+    <FetchResult :result="searchResult" #="{ data, isPending }">
       <SearchResults
         :results="data.items"
         :class="{
-          'opacity-50': status === 'pending',
+          'opacity-50': isPending,
         }"
       />
     </FetchResult>

@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from "#ui/types";
 import type { UserInfoStep } from "~/common/checkout";
-import { UserInfoStepZ } from "~/schemas/checkout";
+import { UserInfoStepZ } from "~/common/schemas/checkout";
 
 defineComponent({ name: "UserInfo" });
 

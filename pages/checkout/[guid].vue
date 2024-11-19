@@ -38,7 +38,7 @@ const travel = await useTravel();
 
 usePageTitle(
   t("checkout.title", {
-    destination: travel.data.value?.name,
+    destination: travel.value.data?.name,
   }),
 );
 

@@ -3,7 +3,7 @@ import {
   PaymentStepZ,
   TravelersStepZ,
   UserInfoStepZ,
-} from "~/schemas/checkout";
+} from "~/common/schemas/checkout";
 
 export type TravelersStep = z.infer<typeof TravelersStepZ>;
 

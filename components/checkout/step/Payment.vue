@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from "#ui/types";
 import type { PaymentStep } from "~/common/checkout";
-import { PaymentStepZ } from "~/schemas/checkout";
+import { PaymentStepZ } from "~/common/schemas/checkout";
 
 defineComponent({ name: "UserInfo" });
 

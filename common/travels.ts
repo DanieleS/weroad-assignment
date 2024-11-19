@@ -1,9 +1,6 @@
-export type Travel = {
-  id: string;
-  name: string;
-  description: string;
-  departureDate: Date;
-  arrivalDate: Date;
-  pricePerPerson: number;
-  picture: string;
-};
+import type { z } from "zod";
+import type { RegionZ, TravelZ } from "./schemas/travel";
+
+export type Region = z.infer<typeof RegionZ>;
+
+export type Travel = z.infer<typeof TravelZ>;
