@@ -10,6 +10,9 @@
       "northAmerica": "North America",
       "southAmerica": "South America",
       "oceania": "Oceania"
+    },
+    "buttons": {
+      "bookTravel": "Book this trip"
     }
   },
   "checkout": {

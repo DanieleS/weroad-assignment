@@ -19,6 +19,14 @@ export type FetchResult<T, E> =
       error: E;
     };
 
+/**
+ * A wrapper around the `useFetch` composable that validates the data against a schema.
+ * It also slightly changes the return value to use a discriminated union.
+ *
+ * @param url The URL to fetch.
+ * @param options The options to pass to `useFetch` and the schema to validate the data.
+ * @returns The result of the fetch with the data validated against the schema.
+ */
 export const useFetchWithSchema = async <T>(
   url: MaybeComputedRef<string>,
   { schema, ...options }: UseFetchOptions<T> & { schema: z.Schema<T> },

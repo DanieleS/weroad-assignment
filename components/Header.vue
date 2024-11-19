@@ -10,7 +10,7 @@
             $t("title")
           }}</span>
         </NuxtLink>
-        <ul class="ml-16 flex gap-8">
+        <ul class="ml-16 hidden gap-8 md:flex">
           <li>
             <NuxtLink to="/search">
               <UIcon name="i-fa6-solid-magnifying-glass" />
@@ -25,7 +25,7 @@
           </li>
         </ul>
       </div>
-      <div class="flex gap-4">
+      <div class="hidden gap-4 md:flex">
         <UButton
           to="#"
           variant="outline"
