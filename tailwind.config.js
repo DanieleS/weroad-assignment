@@ -14,7 +14,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.violet,
+        primary: colors.emerald,
       },
       maxWidth: {
         screen: `calc(${defaultTheme.screens["xl"]} - 1rem)`,
