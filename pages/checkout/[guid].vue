@@ -29,7 +29,7 @@ import type { Checkout } from "~/common/checkout";
 defineComponent({ name: "checkout" });
 
 definePageMeta({
-  layout: "checkout",
+  layout: "empty",
 });
 
 const { t } = useI18n();

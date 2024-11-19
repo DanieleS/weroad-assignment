@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Pacifico";
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+    src: url(/fonts/Pacifico-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Poppins-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+  }
+}

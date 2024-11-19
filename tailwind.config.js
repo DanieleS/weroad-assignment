@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,6 +11,19 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        primary: colors.violet,
+      },
+      maxWidth: {
+        screen: `calc(${defaultTheme.screens["xl"]} - 1rem)`,
+      },
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        logo: ["Pacifico", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
   plugins: [],
 };
