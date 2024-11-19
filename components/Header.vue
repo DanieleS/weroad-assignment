@@ -1,14 +1,14 @@
 <template>
   <header>
-    <div class="max-w-screen mx-auto flex justify-between p-4 py-4">
+    <div class="mx-auto flex max-w-screen justify-between p-4 py-4">
       <div class="flex items-baseline">
         <NuxtLink to="/">
           <h1 v-if="isHomepage" class="font-logo text-2xl">
-            {{ $t("title") }}
+            <span class="text-primary-500">Noi</span>Viaggiamo
           </h1>
-          <span v-else="isHomepage" class="font-logo text-2xl">{{
-            $t("title")
-          }}</span>
+          <span v-else="isHomepage" class="font-logo text-2xl">
+            <span class="text-primary-500">Noi</span>Viaggiamo
+          </span>
         </NuxtLink>
         <ul class="ml-16 hidden gap-8 md:flex">
           <li>

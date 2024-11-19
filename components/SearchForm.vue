@@ -1,20 +1,32 @@
 <template>
-  <UForm :state="searchState" @submit="onSubmit">
-    <UFormGroup label="Destination">
+  <UForm
+    :state="searchState"
+    @submit="onSubmit"
+    class="mx-auto mb-8 mt-4 flex w-fit items-end gap-4 rounded border border-gray-50 p-2 shadow-xl"
+  >
+    <UFormGroup>
       <USelectMenu
         v-model="destination"
         value-attribute="value"
         option-attribute="title"
         :options
+        :placeholder="$t('search.destinationPlaceholder')"
+        class="w-48 text-primary-500"
+        variant="none"
+        color="primary"
+        size="lg"
       />
     </UFormGroup>
-    <UFormGroup label="Dates">
+    <UFormGroup>
       <UPopover :popper="{ placement: 'bottom-start' }">
-        <ClientOnly>
-          <UButton>
-            {{ formatDateRange(dateRange) ?? "Select dates" }}
-          </UButton>
-        </ClientOnly>
+        <UButton class="w-48" variant="ghost" size="lg">
+          <span v-if="dateRange" class="text-primary-500">
+            {{ formatDateRange(dateRange) }}
+          </span>
+          <span v-else class="text-gray-400">{{
+            $t("search.dateRangePlaceholder")
+          }}</span>
+        </UButton>
         <template #panel="{ close }">
           <InputDatePicker
             :range="true"
@@ -25,7 +37,9 @@
         </template>
       </UPopover>
     </UFormGroup>
-    <UButton type="submit">{{ $t("search.submit") }}</UButton>
+    <UButton type="submit" icon="i-fa6-solid-magnifying-glass" size="lg">{{
+      $t("search.submit")
+    }}</UButton>
   </UForm>
 </template>
 
@@ -89,7 +103,7 @@ const formatDateRange = (
   dateRange: DatePickerRangeObject | undefined,
 ): string | null => {
   if (dateRange?.start && dateRange?.end) {
-    return `${formatDate(dateRange.start as Date)} / ${formatDate(dateRange.end as Date)}`;
+    return `${formatDate(dateRange.start as Date, "numeric")} - ${formatDate(dateRange.end as Date, "numeric")}`;
   }
 
   return null;

@@ -4,10 +4,13 @@
  * @param date The date to format.
  * @returns The formatted date.
  */
-export const formatDate = (date: Date) => {
+export const formatDate = (
+  date: Date,
+  style: "short" | "numeric" = "short",
+) => {
   const dateFormat = new Intl.DateTimeFormat(undefined, {
     year: "numeric",
-    month: "short",
+    month: style,
     day: "numeric",
   });
 
