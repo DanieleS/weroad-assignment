@@ -1,75 +1,70 @@
-# Nuxt Minimal Starter
+# NoiViaggioamo - WeRoad Technical Case
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<small><small><small>It's basically impossible to find a combination of two words in the field of travel that has not already been used</small></small></small>
 
-## Setup
+This project is my implementation of the Technical case. It is a travel booking application that allows users to search for travel destinations, view details, and complete the booking process.
 
-Make sure to install dependencies:
+## Getting Started
+
+Requirements
+
+- Node.js (I used `v22.11.0`)
+- pnpm (I used `9.12.3`)
+
+## Installation
+
+Clone the repository:
 
 ```bash
-# npm
-npm install
+git clone git@github.com:DanieleS/weroad-assignment.git wr-assignment-specchia
+cd wr-assignment-specchia
+```
 
-# pnpm
+Install dependencies:
+
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Running the Project
 
-Start the development server on `http://localhost:3000`:
+Start the development server:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+You should now be able to navigate to `http://localhost:3000`
 
-Build the application for production:
+## Tests
+
+The application features unit tests and e2e tests.
+
+Run unit tests:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm test
 ```
 
-Locally preview production build:
+Run end-to-end tests:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm test
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Tech Stack
+
+- Framework: Nuxt.js
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Testing: Vitest, Playwright
+- Package Manager: pnpm
+
+## Possible improvements
+
+- Success page
+- Complete checkout e2e test
+- Preview and Edit of checkout steps
+- Mobile menu
+- Homepage
+- Trip Detail page
