@@ -4,12 +4,14 @@
       v-model="month"
       :options="monthOptions"
       class="rounded-none ring-0"
+      name="expirationMonth"
     />
     <span>/</span>
     <USelect
       v-model="year"
       :options="yearOptions"
       class="rounded-none ring-0 md:grow"
+      name="expirationYear"
     />
   </div>
 </template>

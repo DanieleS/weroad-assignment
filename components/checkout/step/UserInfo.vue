@@ -17,7 +17,7 @@
         name="dateOfBirth"
       >
         <UPopover :popper="{ placement: 'bottom-start' }">
-          <UButton variant="outline">
+          <UButton variant="outline" data-testid="dateOfBirth">
             {{
               state.dateOfBirth
                 ? formatDate(state.dateOfBirth)

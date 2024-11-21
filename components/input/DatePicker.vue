@@ -8,6 +8,7 @@
     :min-date="minDate"
     :max-date="maxDate"
     @dayclick="onDayClick"
+    data-testid="datePicker"
   />
   <DatePicker
     v-else
@@ -17,6 +18,7 @@
     :min-date="minDate"
     :max-date="maxDate"
     @dayclick="onDayClick"
+    data-testid="datePicker"
   />
 </template>
 
