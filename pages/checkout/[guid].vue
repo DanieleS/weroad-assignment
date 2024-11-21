@@ -60,15 +60,20 @@ const currentStep = ref<Step>("travelers");
 
 const checkoutState = ref<Partial<Checkout>>({});
 
-const onSubmit = <T extends Exclude<Step, "done">>(
+const onSubmit = async <T extends Exclude<Step, "done">>(
   from: T,
   to: Step,
   data: Checkout[T],
 ) => {
-  checkoutState.value[from] = data;
   if (to === "done") {
+    await $fetch("/api/checkout", {
+      method: "POST",
+      body: checkoutState.value,
+    });
+
     navigateTo("/checkout/success");
   } else {
+    checkoutState.value[from] = data; // It should be before the `if` statement, but in this way we don't actually store payment info for this demo :P
     currentStep.value = to;
   }
 };

@@ -1,14 +1,17 @@
 <template>
-  <div class="flex h-screen w-full flex-col items-center justify-center">
+  <div
+    class="flex h-screen w-full flex-col items-center justify-center text-center"
+  >
     <h1 class="text-3xl">{{ $t("success.title") }}</h1>
-    <div class="text-xl">
+    <div class="text-xl italic">
       <i18n-t scope="global" keypath="success.subTitle" as="h2">
-        <span class="italic text-primary-500">{{
-          $t("success.subTitleAccent")
-        }}</span>
+        <span class="text-primary-500">{{ $t("success.subTitleAccent") }}</span>
       </i18n-t>
     </div>
     <p class="mt-8">{{ $t("success.message") }}</p>
+    <NuxtLink to="/" class="mt-8 text-primary-500 underline">
+      {{ $t("success.backHome") }}
+    </NuxtLink>
   </div>
 </template>
 
