@@ -16,7 +16,8 @@
     }
   },
   "checkout": {
-    "title": "Travel to {destination}"
+    "pageTitle": "Travel to {destination}",
+    "title": "Complete your order and travel to {destination}!"
   },
   "errors": {
     "generic": "An unknown error occurred"

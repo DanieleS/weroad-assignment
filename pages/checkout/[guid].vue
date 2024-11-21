@@ -1,23 +1,33 @@
 <template>
   <div>
-    <h1>Checkout</h1>
     <FetchResult :result="travel" #="{ data }">
-      <div>
-        <CheckoutStepTravelers
-          :is-active="currentStep === 'travelers'"
-          @step:complete="onSubmit('travelers', 'userInfo', $event)"
-        />
-        <CheckoutStepUserInfo
-          :is-active="currentStep === 'userInfo'"
-          @step:complete="onSubmit('userInfo', 'payment', $event)"
-        />
-        <CheckoutStepPayment
-          :is-active="currentStep === 'payment'"
-          @step:complete="onSubmit('payment', 'done', $event)"
-        />
-      </div>
-      <div>
-        {{ data.name }}
+      <h1 class="mb-8 mt-4 text-2xl">
+        {{
+          t("checkout.title", {
+            destination: data.name,
+          })
+        }}
+      </h1>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-4 flex flex-col gap-4 md:col-span-3">
+          <CheckoutStepTravelers
+            :is-active="currentStep === 'travelers'"
+            @step:complete="onSubmit('travelers', 'userInfo', $event)"
+          />
+          <CheckoutStepUserInfo
+            :is-active="currentStep === 'userInfo'"
+            @step:complete="onSubmit('userInfo', 'payment', $event)"
+          />
+          <CheckoutStepPayment
+            :is-active="currentStep === 'payment'"
+            @step:complete="onSubmit('payment', 'done', $event)"
+          />
+        </div>
+        <aside
+          class="col-span-4 mt-8 rounded-xl border border-gray-300 md:col-span-1 md:mt-0"
+        >
+          {{ data.name }}
+        </aside>
       </div>
     </FetchResult>
   </div>
@@ -29,7 +39,7 @@ import type { Checkout } from "~/common/checkout";
 defineComponent({ name: "checkout" });
 
 definePageMeta({
-  layout: "empty",
+  layout: "checkout",
 });
 
 const { t } = useI18n();
@@ -37,7 +47,7 @@ const { t } = useI18n();
 const travel = await useTravel();
 
 usePageTitle(
-  t("checkout.title", {
+  t("checkout.pageTitle", {
     destination: travel.value.data?.name,
   }),
 );

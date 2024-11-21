@@ -6,4 +6,8 @@
 
 <script setup lang="ts">
 defineComponent({ name: "success" });
+
+definePageMeta({
+  layout: "checkout",
+});
 </script>

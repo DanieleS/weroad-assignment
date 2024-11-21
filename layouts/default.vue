@@ -1,6 +1,6 @@
 <template>
   <Header :isHomepage />
-  <main class="max-w-screen mx-auto p-4"><slot /></main>
+  <Main><slot /></Main>
 </template>
 
 <script setup lang="ts">
