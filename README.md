@@ -62,9 +62,5 @@ pnpm test
 
 ## Possible improvements
 
-- Success page
-- Complete checkout e2e test
-- Preview and Edit of checkout steps
-- Mobile menu
 - Homepage
 - Trip Detail page
