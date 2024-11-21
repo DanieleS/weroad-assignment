@@ -12,7 +12,7 @@
     "destinationPlaceholder": "Where?",
     "dateRangePlaceholder": "When?",
     "submit": "Search",
-    "price": "{0}/person",
+    "price": "{0}/traveler",
     "area": {
       "europe": "Europe",
       "asia": "Asia",

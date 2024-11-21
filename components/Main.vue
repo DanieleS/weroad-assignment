@@ -1,5 +1,5 @@
 <template>
-  <main class="mx-auto max-w-screen p-4"><slot /></main>
+  <main class="container mx-auto p-4"><slot /></main>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="mx-auto flex max-w-screen justify-between p-4 py-4">
+    <div class="container mx-auto flex justify-between p-4 py-4">
       <div class="flex items-baseline">
         <NuxtLink to="/">
           <h1 v-if="isHomepage" class="font-logo text-2xl">

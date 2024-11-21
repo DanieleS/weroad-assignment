@@ -16,9 +16,6 @@ export default {
       colors: {
         primary: colors.emerald,
       },
-      maxWidth: {
-        screen: `calc(${defaultTheme.screens["xl"]} - 1rem)`,
-      },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
         logo: ["Pacifico", ...defaultTheme.fontFamily.sans],
