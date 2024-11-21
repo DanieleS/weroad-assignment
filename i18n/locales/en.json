@@ -55,6 +55,12 @@
       "total": "Total"
     }
   },
+  "success": {
+    "title": "Your order has been successfully placed!",
+    "subTitle": "Get ready for your {0}!",
+    "subTitleAccent": "new adventure",
+    "message": "You will receive a confirmation email shortly."
+  },
   "errors": {
     "generic": "An unknown error occurred"
   }
