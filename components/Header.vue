@@ -1,50 +1,15 @@
 <template>
   <header>
-    <div class="container mx-auto flex justify-between p-4 py-4">
-      <div class="flex items-baseline">
-        <NuxtLink to="/">
-          <h1 v-if="isHomepage" class="font-logo text-2xl">
-            <span class="text-primary-500">Noi</span>Viaggiamo
-          </h1>
-          <span v-else="isHomepage" class="font-logo text-2xl">
-            <span class="text-primary-500">Noi</span>Viaggiamo
-          </span>
-        </NuxtLink>
-        <nav class="ml-16">
-          <ul class="hidden gap-8 md:flex">
-            <li>
-              <NuxtLink to="/search">
-                <UIcon name="i-fa6-solid-magnifying-glass" />
-                Search
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="#"> Some Link </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="#"> Some other Link </NuxtLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="hidden gap-4 md:flex">
-        <UButton
-          to="#"
-          variant="outline"
-          :ui="{ rounded: 'rounded-full' }"
-          color="gray"
-          class="min-w-20 justify-center"
-        >
-          Login
-        </UButton>
-        <UButton
-          to="#"
-          :ui="{ rounded: 'rounded-full' }"
-          class="min-w-20 justify-center"
-        >
-          Register</UButton
-        >
-      </div>
+    <div class="container mx-auto flex items-baseline justify-between p-4 py-4">
+      <NuxtLink to="/">
+        <h1 v-if="isHomepage" class="font-logo text-2xl">
+          <span class="text-primary-500">Noi</span>Viaggiamo
+        </h1>
+        <span v-else="isHomepage" class="font-logo text-2xl">
+          <span class="text-primary-500">Noi</span>Viaggiamo
+        </span>
+      </NuxtLink>
+      <MainMenu />
     </div>
   </header>
 </template>

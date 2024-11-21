@@ -1,6 +1,8 @@
 <template>
-  <Header :isHomepage />
-  <Main><slot /></Main>
+  <div>
+    <Header :isHomepage />
+    <Main><slot /></Main>
+  </div>
 </template>
 
 <script setup lang="ts">

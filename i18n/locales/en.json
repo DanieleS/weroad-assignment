@@ -8,11 +8,19 @@
       "edit": "Edit"
     }
   },
+  "header": {
+    "menu": "Menu",
+    "search": "Search",
+    "link1": "How it works",
+    "link2": "About Us",
+    "login": "Login",
+    "register": "Register"
+  },
   "search": {
     "destinationPlaceholder": "Where?",
     "dateRangePlaceholder": "When?",
     "submit": "Search",
-    "price": "{0}/traveler",
+    "price": "{0}/pp",
     "area": {
       "europe": "Europe",
       "asia": "Asia",
@@ -69,7 +77,8 @@
     "title": "Your order has been successfully placed!",
     "subTitle": "Get ready for your {0}!",
     "subTitleAccent": "new adventure",
-    "message": "You will receive a confirmation email shortly."
+    "message": "You will receive a confirmation email shortly.",
+    "backHome": "Go back to the homepage"
   },
   "errors": {
     "generic": "An unknown error occurred"
