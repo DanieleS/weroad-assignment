@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="my-16 flex flex-col gap-8 lg:flex-row">
-      <div>
+      <div class="max-lg:order-1">
         <Placeholder class="aspect-[16/9] w-full lg:w-96" />
       </div>
       <p>

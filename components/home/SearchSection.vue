@@ -7,7 +7,9 @@
         {{ $t("homepage.title") }}
       </h2>
       <div class="md:basis-96">
-        <SearchForm navigation="push" />
+        <SearchForm navigation="push" #title>
+          <div class="mb-4 px-2 text-lg">{{ $t("homepage.searchTitle") }}</div>
+        </SearchForm>
       </div>
     </div>
   </section>

@@ -17,7 +17,8 @@
     "register": "Register"
   },
   "homepage": {
-    "title": "Discover Your Next Adventure with Us"
+    "title": "Discover Your Next Adventure with Us",
+    "searchTitle": "Find the perfect trip for you:"
   },
   "search": {
     "destinationPlaceholder": "Where?",
@@ -79,7 +80,7 @@
   "success": {
     "title": "Your order has been successfully placed!",
     "subTitle": "Get ready for your {0}!",
-    "subTitleAccent": "new adventure",
+    "subTitleAccent": "next adventure",
     "message": "You will receive a confirmation email shortly.",
     "backHome": "Go back to the homepage"
   },

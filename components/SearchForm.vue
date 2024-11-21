@@ -3,8 +3,11 @@
     <UForm
       :state="searchState"
       @submit="onSubmit"
-      class="@[34rem]:flex-row @[34rem]:items-end flex w-full flex-col gap-4 rounded border border-gray-50 bg-white p-2 shadow-xl"
+      class="@[34rem]:flex-row @[34rem]:items-end @[34rem]:p-2 flex w-full flex-col gap-4 rounded border border-gray-50 bg-white p-4 shadow-xl"
     >
+      <div>
+        <slot name="title" />
+      </div>
       <UFormGroup>
         <USelectMenu
           v-model="destination"
@@ -20,7 +23,12 @@
       </UFormGroup>
       <UFormGroup>
         <UPopover :popper="{ placement: 'bottom-start' }">
-          <UButton class="w-full min-w-48" variant="ghost" size="lg">
+          <UButton
+            class="w-full min-w-48"
+            variant="ghost"
+            size="lg"
+            data-allow-mismatch
+          >
             <span v-if="dateRange" class="text-primary-500">
               {{ formatDateRange(dateRange) }}
             </span>
@@ -48,6 +56,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from "#ui/types";
 import type { DatePickerRangeObject } from "v-calendar/dist/types/src/use/datePicker.js";
+import type { LocationQueryValue } from "vue-router";
 import { buildUrlQueryParams, urlSearchParamsToRecord } from "~/utils/url";
 
 defineComponent({ name: "SearchForm" });
@@ -81,6 +90,30 @@ const searchState = computed(() => {
     dateRange: dateRange.value,
   };
 });
+
+watch(
+  () => useRoute().query,
+  (query) => {
+    if (query.destination && typeof query.destination === "string") {
+      destination.value = query.destination;
+    }
+
+    if (
+      query["dateRange.start"] &&
+      typeof query["dateRange.start"] === "string" &&
+      query["dateRange.end"] &&
+      typeof query["dateRange.end"] === "string"
+    ) {
+      dateRange.value = {
+        start: new Date(query["dateRange.start"]),
+        end: new Date(query["dateRange.end"]),
+      };
+    }
+  },
+  {
+    immediate: true,
+  },
+);
 
 async function onSubmit(event: FormSubmitEvent<SearchState>) {
   const query = urlSearchParamsToRecord(buildUrlQueryParams(event.data));
