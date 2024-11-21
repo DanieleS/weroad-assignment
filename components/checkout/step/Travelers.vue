@@ -10,10 +10,13 @@
       v-model="state"
       @submit="(hasData = true), $emit('step:complete', $event)"
     >
-      <div class="gap-8 md:flex md:items-center">
-        <label>{{ $t("checkout.steps.travelers.howManyTravelers") }}</label>
+      <UFormGroup
+        name="travelers"
+        class="gap-8 md:flex md:items-center"
+        :label="$t('checkout.steps.travelers.howManyTravelers')"
+      >
         <InputNumber v-model="state.travelers" :min="1" class="mt-8 md:mt-0" />
-      </div>
+      </UFormGroup>
     </CheckoutForm>
     <template #summary>
       <div>

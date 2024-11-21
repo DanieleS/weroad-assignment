@@ -3,7 +3,6 @@
     v-if="range"
     v-bind="{ ...attrs, ...$attrs }"
     v-model.range="date"
-    :columns="2"
     :rules
     :min-date="minDate"
     :max-date="maxDate"

@@ -8,7 +8,14 @@
     >
       -
     </UButton>
-    <span class="w-12 text-center">{{ model }}</span>
+    <UInput
+      :name="$attrs.name as string"
+      class="w-12"
+      v-model="model"
+      readonly
+      variant="none"
+      input-class="text-center"
+    />
     <UButton
       class="flex aspect-square w-8 items-center justify-center"
       :ui="{ rounded: 'rounded-full' }"

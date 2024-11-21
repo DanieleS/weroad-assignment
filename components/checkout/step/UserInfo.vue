@@ -31,6 +31,11 @@
                 : $t("common.button.selectDate")
             }}
           </UButton>
+          <UInput
+            type="text"
+            class="hidden"
+            :value="state.dateOfBirth?.toISOString()"
+          />
           <template #panel="{ close }">
             <InputDatePicker
               v-model="state.dateOfBirth"
@@ -45,7 +50,12 @@
         name="email"
         required
       >
-        <UInput v-model="state.email" type="email" class="max-w-96" />
+        <UInput
+          v-model="state.email"
+          type="email"
+          class="max-w-96"
+          autocomplete="email"
+        />
       </UFormGroup>
       <UFormGroup
         :label="$t('checkout.steps.userInfo.phone')"

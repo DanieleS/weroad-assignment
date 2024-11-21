@@ -66,8 +66,4 @@ type Emits = {
 const emit = defineEmits<Emits>();
 
 const state = reactive<Partial<PaymentStep>>({});
-
-const onSubmit = (event: FormSubmitEvent<PaymentStep>) => {
-  emit("step:complete", event.data);
-};
 </script>
