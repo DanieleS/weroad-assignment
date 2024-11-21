@@ -11,6 +11,7 @@
         {{ formatDate(travel.departureDate) }} -
         {{ formatDate(travel.arrivalDate) }}
       </div>
+      <Rating :value="travel.rating" />
       <div class="mt-8 flex items-center justify-between">
         <div class="text-lg font-semibold">
           {{ formatCurrency(travel.pricePerPerson, "EUR") }}

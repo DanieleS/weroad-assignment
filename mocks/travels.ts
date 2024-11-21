@@ -9,6 +9,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2024-12-10"),
     pricePerPerson: 100,
     picture: "/images/travels/paris.jpg",
+    rating: 4,
     region: "europe",
   },
   {
@@ -19,6 +20,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-01-10"),
     pricePerPerson: 200,
     picture: "/images/travels/london.jpg",
+    rating: 5,
     region: "europe",
   },
   {
@@ -29,6 +31,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-02-10"),
     pricePerPerson: 300,
     picture: "/images/travels/newyork.jpg",
+    rating: 3.5,
     region: "america",
   },
   {
@@ -39,6 +42,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-03-10"),
     pricePerPerson: 400,
     picture: "/images/travels/tokyo.jpg",
+    rating: 4.5,
     region: "asia",
   },
   {
@@ -49,6 +53,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-04-10"),
     pricePerPerson: 500,
     picture: "/images/travels/sydney.jpg",
+    rating: 4,
     region: "oceania",
   },
   {
@@ -59,6 +64,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-05-10"),
     pricePerPerson: 600,
     picture: "/images/travels/rome.jpg",
+    rating: 4.5,
     region: "europe",
   },
   {
@@ -69,6 +75,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-07-10"),
     pricePerPerson: 800,
     picture: "/images/travels/dubai.jpg",
+    rating: 3.2,
     region: "asia",
   },
   {
@@ -79,6 +86,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-10-10"),
     pricePerPerson: 1100,
     picture: "/images/travels/beijing.jpg",
+    rating: 4.2,
     region: "asia",
   },
   {
@@ -89,6 +97,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-11-10"),
     pricePerPerson: 1200,
     picture: "/images/travels/rio.jpg",
+    rating: 4.8,
     region: "america",
   },
   {
@@ -99,6 +108,7 @@ export const mockTravels: Travel[] = [
     arrivalDate: new Date("2025-12-10"),
     pricePerPerson: 1300,
     picture: "/images/travels/capetown.jpg",
+    rating: 4.3,
     region: "africa",
   },
 ];

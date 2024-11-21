@@ -15,6 +15,7 @@ export const TravelZ = z.object({
   departureDate: z.coerce.date(),
   arrivalDate: z.coerce.date(),
   pricePerPerson: z.number(),
+  rating: z.number().min(0).max(5),
   picture: z.string(),
   region: RegionZ,
 });
