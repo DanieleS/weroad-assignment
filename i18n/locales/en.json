@@ -29,8 +29,7 @@
       "europe": "Europe",
       "asia": "Asia",
       "africa": "Africa",
-      "northAmerica": "North America",
-      "southAmerica": "South America",
+      "america": "America",
       "oceania": "Oceania"
     },
     "buttons": {

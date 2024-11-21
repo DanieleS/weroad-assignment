@@ -129,8 +129,7 @@ const options = [
   { value: "europe", title: t("search.area.europe") },
   { value: "asia", title: t("search.area.asia") },
   { value: "africa", title: t("search.area.africa") },
-  { value: "northAmerica", title: t("search.area.northAmerica") },
-  { value: "southAmerica", title: t("search.area.southAmerica") },
+  { value: "america", title: t("search.area.america") },
   { value: "oceania", title: t("search.area.oceania") },
 ];
 
