@@ -1,4 +1,12 @@
 {
+  "common": {
+    "button": {
+      "next": "Next",
+      "confirm": "Confirm",
+      "selectDatesRange": "Select dates",
+      "selectDate": "Select date"
+    }
+  },
   "search": {
     "destinationPlaceholder": "Where?",
     "dateRangePlaceholder": "When?",
@@ -17,7 +25,27 @@
   },
   "checkout": {
     "pageTitle": "Travel to {destination}",
-    "title": "Complete your order and travel to {destination}!"
+    "title": "Complete your order and travel to {destination}!",
+    "steps": {
+      "travelers": {
+        "title": "Travelers",
+        "howManyTravelers": "How many travelers are you booking for?"
+      },
+      "payment": {
+        "title": "Payment",
+        "cardHolder": "Card holder",
+        "cardNumber": "Card number",
+        "expirationDate": "Expiration date",
+        "cvv": "CVV"
+      },
+      "userInfo": {
+        "title": "Your informations",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "dateOfBirth": "Date of birth"
+      }
+    }
   },
   "errors": {
     "generic": "An unknown error occurred"

@@ -9,7 +9,7 @@
         }}
       </h1>
       <div class="grid grid-cols-4 gap-4">
-        <div class="col-span-4 flex flex-col gap-4 md:col-span-3">
+        <div class="steps col-span-4 flex flex-col gap-4 md:col-span-3">
           <CheckoutStepTravelers
             :is-active="currentStep === 'travelers'"
             @step:complete="onSubmit('travelers', 'userInfo', $event)"
@@ -75,3 +75,9 @@ const onSubmit = <T extends Exclude<Step, "done">>(
   }
 };
 </script>
+
+<style scoped>
+.steps {
+  counter-reset: checkout-step;
+}
+</style>

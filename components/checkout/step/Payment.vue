@@ -1,21 +1,43 @@
 <template>
-  <CheckoutStep title="Payment Info" :is-active>
-    <UForm :schema="PaymentStepZ" :state @submit="onSubmit">
-      <UFormGroup label="Card Holder" name="cardHolder">
+  <CheckoutStep :title="$t('checkout.steps.payment.title')" :is-active>
+    <CheckoutForm
+      class="flex flex-col gap-4"
+      :schema="PaymentStepZ"
+      v-model="state"
+      :next-label="$t('common.button.confirm')"
+      @submit="$emit('step:complete', $event)"
+    >
+      <UFormGroup
+        class="max-w-96"
+        :label="$t('checkout.steps.payment.cardHolder')"
+        name="cardHolder"
+      >
         <UInput v-model="state.cardHolder" />
       </UFormGroup>
-      <UFormGroup label="Card Number" name="cardNumber">
+      <UFormGroup
+        class="max-w-96"
+        :label="$t('checkout.steps.payment.cardNumber')"
+        name="cardNumber"
+      >
         <UInput v-model="state.cardNumber" />
       </UFormGroup>
-      <UFormGroup label="Expiration Date" name="expirationDate">
-        <InputCardExpiration v-model="state.expirationDate" />
-      </UFormGroup>
-      <UFormGroup label="CVV" name="cvv">
-        <UInput v-model="state.cvv" />
-      </UFormGroup>
-
-      <UButton type="submit">Next</UButton>
-    </UForm>
+      <div class="flex max-w-96 flex-col gap-4 md:flex-row">
+        <UFormGroup
+          :label="$t('checkout.steps.payment.expirationDate')"
+          name="expirationDate"
+          class="grow"
+        >
+          <InputCardExpiration v-model="state.expirationDate" />
+        </UFormGroup>
+        <UFormGroup
+          :label="$t('checkout.steps.payment.cvv')"
+          name="cvv"
+          class="grow"
+        >
+          <UInput v-model="state.cvv" />
+        </UFormGroup>
+      </div>
+    </CheckoutForm>
   </CheckoutStep>
 </template>
 

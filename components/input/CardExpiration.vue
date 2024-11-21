@@ -1,8 +1,16 @@
 <template>
-  <div class="flex gap-1 rounded-sm ring-2">
-    <USelect :options="monthOptions" class="rounded-none ring-0" />
+  <div class="flex gap-1">
+    <USelect
+      v-model="month"
+      :options="monthOptions"
+      class="rounded-none ring-0"
+    />
     <span>/</span>
-    <USelect :options="yearOptions" class="rounded-none ring-0" />
+    <USelect
+      v-model="year"
+      :options="yearOptions"
+      class="rounded-none ring-0 md:grow"
+    />
   </div>
 </template>
 
@@ -11,16 +19,29 @@ defineComponent({ name: "CardExpiration" });
 
 const model = defineModel<string>();
 
+const month = ref<string>("1");
+const year = ref<string>(String(new Date().getFullYear()));
+
+watch(
+  [month, year],
+  ([month, year]) => {
+    model.value = `${month}/${year}`;
+  },
+  {
+    immediate: true,
+  },
+);
+
 const monthOptions = [
-  "01",
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
-  "07",
-  "08",
-  "09",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
   "10",
   "11",
   "12",

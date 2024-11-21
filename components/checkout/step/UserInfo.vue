@@ -1,20 +1,29 @@
 <template>
-  <CheckoutStep title="Your info" :is-active>
-    <UForm :schema="UserInfoStepZ" :state @submit="onSubmit">
-      <UFormGroup label="Full name" name="fullName">
-        <UInput v-model="state.fullName" />
+  <CheckoutStep :title="$t('checkout.steps.userInfo.title')" :is-active>
+    <CheckoutForm
+      :schema="UserInfoStepZ"
+      v-model="state"
+      @submit="$emit('step:complete', $event)"
+      class="flex flex-col gap-4"
+    >
+      <UFormGroup
+        :label="$t('checkout.steps.userInfo.fullName')"
+        name="fullName"
+      >
+        <UInput v-model="state.fullName" class="max-w-96" />
       </UFormGroup>
-      <UFormGroup label="Date of birth" name="dateOfBirth">
+      <UFormGroup
+        :label="$t('checkout.steps.userInfo.dateOfBirth')"
+        name="dateOfBirth"
+      >
         <UPopover :popper="{ placement: 'bottom-start' }">
-          <ClientOnly>
-            <UButton>
-              {{
-                state.dateOfBirth
-                  ? formatDate(state.dateOfBirth)
-                  : "Select dates"
-              }}
-            </UButton>
-          </ClientOnly>
+          <UButton variant="outline">
+            {{
+              state.dateOfBirth
+                ? formatDate(state.dateOfBirth)
+                : $t("common.button.selectDate")
+            }}
+          </UButton>
           <template #panel="{ close }">
             <InputDatePicker
               v-model="state.dateOfBirth"
@@ -24,20 +33,20 @@
           </template>
         </UPopover>
       </UFormGroup>
-      <UFormGroup label="Email" name="email">
-        <UInput v-model="state.email" type="email" />
+      <UFormGroup :label="$t('checkout.steps.userInfo.email')" name="email">
+        <UInput v-model="state.email" type="email" class="max-w-96" />
       </UFormGroup>
-      <UFormGroup label="Phone number" name="phoneNumber">
-        <UInput v-model="state.phoneNumber" type="tel" />
+      <UFormGroup
+        :label="$t('checkout.steps.userInfo.phone')"
+        name="phoneNumber"
+      >
+        <UInput v-model="state.phoneNumber" type="tel" class="max-w-96" />
       </UFormGroup>
-
-      <UButton type="submit">Next</UButton>
-    </UForm>
+    </CheckoutForm>
   </CheckoutStep>
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from "#ui/types";
 import type { UserInfoStep } from "~/common/checkout";
 import { UserInfoStepZ } from "~/common/schemas/checkout";
 
@@ -53,11 +62,7 @@ type Emits = {
   "step:complete": [state: UserInfoStep];
 };
 
-const emit = defineEmits<Emits>();
+defineEmits<Emits>();
 
 const state = reactive<Partial<UserInfoStep>>({});
-
-const onSubmit = (event: FormSubmitEvent<UserInfoStep>) => {
-  emit("step:complete", event.data);
-};
 </script>

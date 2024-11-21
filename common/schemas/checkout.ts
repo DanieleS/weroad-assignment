@@ -13,9 +13,20 @@ export const UserInfoStepZ = z.object({
   phoneNumber: z.string().refine(isMobilePhone),
 });
 
+type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type ExpirationDate = `${Month}/${number}`;
+
+const ExpirationDateZ = z
+  .string()
+  .regex(/^\d{1,2}\/\d{4}$/)
+  .refine((date): date is ExpirationDate => {
+    const [month] = date.split("/");
+    return Number(month) >= 1 && Number(month) <= 12;
+  });
+
 export const PaymentStepZ = z.object({
   cardNumber: z.string().refine(isCreditCard),
   cardHolder: z.string().min(1),
-  expirationDate: z.string().regex(/^\d{2}\/\d{2}$/),
+  expirationDate: ExpirationDateZ,
   cvv: z.string().length(3),
 });

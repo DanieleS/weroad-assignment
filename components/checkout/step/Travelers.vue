@@ -1,16 +1,21 @@
 <template>
-  <CheckoutStep title="Travelers" :is-active>
-    <UForm :state @submit="onSubmit">
-      <div>How many travelers are you booking for?</div>
-      <InputNumber v-model="state.travelers" :min="1" />
-      <UButton type="submit">Next</UButton>
-    </UForm>
+  <CheckoutStep :title="$t('checkout.steps.travelers.title')" :is-active>
+    <CheckoutForm
+      :schema="TravelersStepZ"
+      v-model="state"
+      @submit="$emit('step:complete', $event)"
+    >
+      <div class="gap-8 md:flex md:items-center">
+        <label>{{ $t("checkout.steps.travelers.howManyTravelers") }}</label>
+        <InputNumber v-model="state.travelers" :min="1" class="mt-8 md:mt-0" />
+      </div>
+    </CheckoutForm>
   </CheckoutStep>
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from "#ui/types";
 import type { TravelersStep } from "~/common/checkout";
+import { TravelersStepZ } from "~/common/schemas/checkout";
 
 defineComponent({ name: "Travelers" });
 
@@ -24,13 +29,9 @@ type Emits = {
   "step:complete": [state: { travelers: number }];
 };
 
-const emit = defineEmits<Emits>();
+defineEmits<Emits>();
 
 const state = reactive<TravelersStep>({
   travelers: 1,
 });
-
-const onSubmit = (event: FormSubmitEvent<TravelersStep>) => {
-  emit("step:complete", event.data);
-};
 </script>
