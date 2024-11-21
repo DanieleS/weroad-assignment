@@ -4,7 +4,8 @@
       "next": "Next",
       "confirm": "Confirm",
       "selectDatesRange": "Select dates",
-      "selectDate": "Select date"
+      "selectDate": "Select date",
+      "edit": "Edit"
     }
   },
   "search": {
@@ -30,7 +31,10 @@
     "steps": {
       "travelers": {
         "title": "Travelers",
-        "howManyTravelers": "How many travelers are you booking for?"
+        "howManyTravelers": "How many travelers are you booking for?",
+        "summary": {
+          "travelers": "Travelers"
+        }
       },
       "payment": {
         "title": "Payment",
@@ -44,7 +48,13 @@
         "fullName": "Full Name",
         "email": "Email",
         "phone": "Phone",
-        "dateOfBirth": "Date of birth"
+        "dateOfBirth": "Date of birth",
+        "summary": {
+          "fullName": "Full Name",
+          "email": "Email",
+          "phone": "Phone",
+          "dateOfBirth": "Date of birth"
+        }
       }
     },
     "recap": {

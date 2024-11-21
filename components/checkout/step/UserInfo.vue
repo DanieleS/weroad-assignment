@@ -1,9 +1,14 @@
 <template>
-  <CheckoutStep :title="$t('checkout.steps.userInfo.title')" :is-active>
+  <CheckoutStep
+    :title="$t('checkout.steps.userInfo.title')"
+    :is-active
+    :has-data
+    @step:edit="$emit('step:edit')"
+  >
     <CheckoutForm
       :schema="UserInfoStepZ"
       v-model="state"
-      @submit="$emit('step:complete', $event)"
+      @submit="(hasData = true), $emit('step:complete', $event)"
       class="flex flex-col gap-4"
     >
       <UFormGroup
@@ -43,6 +48,18 @@
         <UInput v-model="state.phoneNumber" type="tel" class="max-w-96" />
       </UFormGroup>
     </CheckoutForm>
+    <template #summary>
+      <div class="grid w-fit grid-cols-2 gap-2">
+        <div>{{ $t("checkout.steps.userInfo.summary.fullName") }}:</div>
+        <div>{{ state.fullName }}</div>
+        <div>{{ $t("checkout.steps.userInfo.summary.email") }}:</div>
+        <div>{{ state.email }}</div>
+        <div>{{ $t("checkout.steps.userInfo.summary.phone") }}:</div>
+        <div>{{ state.phoneNumber }}</div>
+        <div>{{ $t("checkout.steps.userInfo.summary.dateOfBirth") }}:</div>
+        <div>{{ formatDate(state.dateOfBirth!) }}</div>
+      </div>
+    </template>
   </CheckoutStep>
 </template>
 
@@ -60,9 +77,11 @@ defineProps<Props>();
 
 type Emits = {
   "step:complete": [state: UserInfoStep];
+  "step:edit": [];
 };
 
 defineEmits<Emits>();
 
 const state = reactive<Partial<UserInfoStep>>({});
+const hasData = ref(false);
 </script>

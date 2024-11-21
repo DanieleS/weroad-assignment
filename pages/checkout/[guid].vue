@@ -13,10 +13,12 @@
           <CheckoutStepTravelers
             :is-active="currentStep === 'travelers'"
             @step:complete="onSubmit('travelers', 'userInfo', $event)"
+            @step:edit="currentStep = 'travelers'"
           />
           <CheckoutStepUserInfo
             :is-active="currentStep === 'userInfo'"
             @step:complete="onSubmit('userInfo', 'payment', $event)"
+            @step:edit="currentStep = 'userInfo'"
           />
           <CheckoutStepPayment
             :is-active="currentStep === 'payment'"

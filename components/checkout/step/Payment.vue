@@ -56,6 +56,7 @@ defineProps<Props>();
 
 type Emits = {
   "step:complete": [state: PaymentStep];
+  "step:edit": [];
 };
 
 const emit = defineEmits<Emits>();
