@@ -1,18 +1,18 @@
 <template>
-  <div class="flex justify-between">
+  <div class="@[16rem]:flex justify-between">
     <div class="basis-1/2 text-gray-600">
       {{ $t("checkout.recap.travelers") }}
     </div>
     <div>{{ travelers ?? "-" }}</div>
   </div>
-  <div class="flex justify-between">
+  <div class="@[16rem]:flex justify-between">
     <div class="basis-1/2 text-gray-600">
       {{ $t("checkout.recap.perPerson") }}
     </div>
     <div>{{ formatCurrency(travel.pricePerPerson, "EUR") }}</div>
   </div>
   <UDivider />
-  <div class="flex justify-between font-semibold">
+  <div class="@[16rem]:flex justify-between font-semibold">
     <div class="basis-1/2 text-gray-600">
       {{ $t("checkout.recap.total") }}
     </div>

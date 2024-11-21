@@ -15,6 +15,7 @@
     "@nuxt/icon": "^1.7.5",
     "@nuxt/ui": "^2.19.2",
     "@nuxtjs/i18n": "9.0.0-rc.2",
+    "@tailwindcss/container-queries": "^0.1.1",
     "date-fns": "^4.1.0",
     "nuxt": "^3.14.159",
     "v-calendar": "^3.1.2",
