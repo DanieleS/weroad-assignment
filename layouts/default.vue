@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :isHomepage />
+    <Header />
     <Main><slot /></Main>
   </div>
 </template>

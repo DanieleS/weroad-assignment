@@ -3,7 +3,7 @@
     <UForm
       :state="searchState"
       @submit="onSubmit"
-      class="@[34rem]:flex-row @[34rem]:items-end flex w-full flex-col gap-4 rounded border border-gray-50 p-2 shadow-xl"
+      class="@[34rem]:flex-row @[34rem]:items-end flex w-full flex-col gap-4 rounded border border-gray-50 bg-white p-2 shadow-xl"
     >
       <UFormGroup>
         <USelectMenu

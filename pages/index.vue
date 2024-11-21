@@ -1,7 +1,9 @@
 <template>
-  <NuxtLayout name="default" :is-homepage="true">
-    <NuxtLink to="/search">Search</NuxtLink>
-  </NuxtLayout>
+  <div>
+    <Header is-homepage />
+    <HomeSearchSection />
+    <Main> <HomeContent class="mt-16" /> </Main>
+  </div>
 </template>
 
 <script setup lang="ts">

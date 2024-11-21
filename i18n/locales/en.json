@@ -16,6 +16,9 @@
     "login": "Login",
     "register": "Register"
   },
+  "homepage": {
+    "title": "Discover Your Next Adventure with Us"
+  },
   "search": {
     "destinationPlaceholder": "Where?",
     "dateRangePlaceholder": "When?",
