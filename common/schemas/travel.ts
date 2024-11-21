@@ -13,7 +13,7 @@ export const TravelZ = z.object({
   name: z.string(),
   description: z.string(),
   departureDate: z.coerce.date(),
-  arrivalDate: z.coerce.date(),
+  returnDate: z.coerce.date(),
   pricePerPerson: z.number(),
   rating: z.number().min(0).max(5),
   picture: z.string(),

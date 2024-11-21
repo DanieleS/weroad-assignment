@@ -9,14 +9,19 @@
       <div class="text-xs">{{ travel.description }}</div>
       <div class="my-4" data-allow-mismatch="text">
         {{ formatDate(travel.departureDate) }} -
-        {{ formatDate(travel.arrivalDate) }}
+        {{ formatDate(travel.returnDate) }}
       </div>
       <Rating :value="travel.rating" />
-      <div class="mt-8 flex items-center justify-between">
-        <div class="text-lg font-semibold">
-          {{ formatCurrency(travel.pricePerPerson, "EUR") }}
+      <div class="mt-8 flex flex-wrap items-center justify-between">
+        <div class="text-xs">
+          <i18n-t scope="global" keypath="search.price">
+            <span class="text-lg font-semibold">
+              {{ formatCurrency(travel.pricePerPerson, "EUR") }}
+            </span>
+          </i18n-t>
         </div>
-        <UButton :to="checkoutUrl">
+        <!-- Class on button are needed when/if it wraps -->
+        <UButton :to="checkoutUrl" class="ml-auto mt-2">
           {{ $t("search.buttons.bookTravel") }}
           <UIcon name="i-fa6-solid-plane-departure" class="ml-2" />
         </UButton>

@@ -23,11 +23,11 @@
             @step:complete="onSubmit('payment', 'done', $event)"
           />
         </div>
-        <aside
-          class="col-span-4 mt-8 rounded-xl border border-gray-300 md:col-span-1 md:mt-0"
-        >
-          {{ data.name }}
-        </aside>
+        <CheckoutRecap
+          :travel="data"
+          :travelers="checkoutState.travelers?.travelers"
+          class="col-span-4 mt-8 self-start md:col-span-1 md:mt-0"
+        />
       </div>
     </FetchResult>
   </div>
@@ -56,11 +56,7 @@ type Step = "travelers" | "userInfo" | "payment" | "done";
 
 const currentStep = ref<Step>("travelers");
 
-const checkoutState = ref<Partial<Checkout>>({
-  travelers: {
-    travelers: 1,
-  },
-});
+const checkoutState = ref<Partial<Checkout>>({});
 
 const onSubmit = <T extends Exclude<Step, "done">>(
   from: T,

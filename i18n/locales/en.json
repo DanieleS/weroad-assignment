@@ -11,6 +11,7 @@
     "destinationPlaceholder": "Where?",
     "dateRangePlaceholder": "When?",
     "submit": "Search",
+    "price": "{0}/person",
     "area": {
       "europe": "Europe",
       "asia": "Asia",
@@ -45,6 +46,13 @@
         "phone": "Phone",
         "dateOfBirth": "Date of birth"
       }
+    },
+    "recap": {
+      "from": "From",
+      "to": "To",
+      "perPerson": "Price per person",
+      "travelers": "Travelers",
+      "total": "Total"
     }
   },
   "errors": {

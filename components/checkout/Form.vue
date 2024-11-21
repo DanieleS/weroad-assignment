@@ -1,5 +1,5 @@
 <template>
-  <UForm :schema :state @submit="$emit('submit', $event)">
+  <UForm :schema :state @submit="$emit('submit', $event.data)">
     <slot />
     <div class="mt-8 flex justify-end">
       <UButton type="submit">

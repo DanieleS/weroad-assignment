@@ -2,7 +2,7 @@
   <div class="flex items-center gap-1">
     <div v-for="width in widths" class="star size-5 bg-gray-100">
       <div
-        class="h-full bg-emerald-500"
+        class="h-full bg-primary-500"
         :style="{
           width: `${width}%`,
         }"
