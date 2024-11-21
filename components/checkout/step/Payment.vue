@@ -11,6 +11,7 @@
         class="max-w-96"
         :label="$t('checkout.steps.payment.cardHolder')"
         name="cardHolder"
+        required
       >
         <UInput v-model="state.cardHolder" />
       </UFormGroup>
@@ -18,6 +19,7 @@
         class="max-w-96"
         :label="$t('checkout.steps.payment.cardNumber')"
         name="cardNumber"
+        required
       >
         <UInput v-model="state.cardNumber" />
       </UFormGroup>
@@ -26,6 +28,7 @@
           :label="$t('checkout.steps.payment.expirationDate')"
           name="expirationDate"
           class="grow"
+          required
         >
           <InputCardExpiration v-model="state.expirationDate" />
         </UFormGroup>
@@ -33,6 +36,7 @@
           :label="$t('checkout.steps.payment.cvv')"
           name="cvv"
           class="grow"
+          required
         >
           <UInput v-model="state.cvv" />
         </UFormGroup>

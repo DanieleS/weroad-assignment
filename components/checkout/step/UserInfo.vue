@@ -14,12 +14,14 @@
       <UFormGroup
         :label="$t('checkout.steps.userInfo.fullName')"
         name="fullName"
+        required
       >
         <UInput v-model="state.fullName" class="max-w-96" />
       </UFormGroup>
       <UFormGroup
         :label="$t('checkout.steps.userInfo.dateOfBirth')"
         name="dateOfBirth"
+        required
       >
         <UPopover :popper="{ placement: 'bottom-start' }">
           <UButton variant="outline" data-testid="dateOfBirth">
@@ -38,12 +40,17 @@
           </template>
         </UPopover>
       </UFormGroup>
-      <UFormGroup :label="$t('checkout.steps.userInfo.email')" name="email">
+      <UFormGroup
+        :label="$t('checkout.steps.userInfo.email')"
+        name="email"
+        required
+      >
         <UInput v-model="state.email" type="email" class="max-w-96" />
       </UFormGroup>
       <UFormGroup
         :label="$t('checkout.steps.userInfo.phone')"
         name="phoneNumber"
+        required
       >
         <UInput v-model="state.phoneNumber" type="tel" class="max-w-96" />
       </UFormGroup>
