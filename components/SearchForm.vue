@@ -1,14 +1,15 @@
 <template>
-  <div class="@container mx-auto mb-8 mt-4 w-full max-w-[34rem]">
+  <div class="@container mx-auto mb-8 mt-4 w-full max-w-[36rem]">
     <UForm
       :state="searchState"
       @submit="onSubmit"
-      class="@[34rem]:flex-row @[34rem]:items-end @[34rem]:p-2 flex w-full flex-col gap-4 rounded border border-gray-50 bg-white p-4 shadow-xl"
+      class="@[36rem]:p-2 rounded border border-gray-50 bg-white p-4 shadow-xl"
     >
       <div>
         <slot name="title" />
       </div>
-      <UFormGroup>
+      <div class="@[36rem]:flex-row @[36rem]:items-end flex w-full flex-col gap-4 ">
+      <UFormGroup name="destination" class="grow">
         <USelectMenu
           v-model="destination"
           value-attribute="value"
@@ -20,7 +21,7 @@
           color="primary"
           size="lg"
         />
-      </UFormGroup>
+      </UFormGroup name="dateRange" class="grow">
       <UFormGroup>
         <UPopover :popper="{ placement: 'bottom-start' }">
           <UButton
@@ -49,6 +50,7 @@
       <UButton type="submit" icon="i-fa6-solid-magnifying-glass" size="lg">{{
         $t("search.submit")
       }}</UButton>
+      </div>
     </UForm>
   </div>
 </template>
