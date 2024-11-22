@@ -1,4 +1,4 @@
-# NoiViaggioamo - WeRoad Technical Case
+# NoiViaggiamo - WeRoad Technical Case
 
 <sub><sup>It's basically impossible to find a combination of two words in the field of trips that has not already been used</sup></sub>
 
@@ -9,7 +9,7 @@ This project is my implementation of the Technical case. It is a trips booking a
 Requirements
 
 - Node.js (I used `v22.11.0`)
-- pnpm (I used `9.12.3`)
+- pnpm (I used `9.13.1`)
 
 ## Installation
 
