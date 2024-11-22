@@ -21,7 +21,7 @@
           </i18n-t>
         </div>
         <!-- Class on button are needed when/if it wraps -->
-        <UButton :to="checkoutUrl" class="ml-auto mt-2">
+        <UButton @click="startCheckout" class="ml-auto mt-2" :loading>
           {{ $t("search.buttons.bookTravel") }}
           <UIcon name="i-fa6-solid-plane-departure" class="ml-2" />
         </UButton>
@@ -42,7 +42,22 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const checkoutUrl = computed(() => {
-  return `/checkout/${props.travel.id}`;
-});
+const router = useRouter();
+
+const loading = ref(false);
+
+const startCheckout = async () => {
+  loading.value = true;
+
+  const { sessionId } = await $fetch("/api/checkout/session", {
+    method: "POST",
+    body: { travelId: props.travel.id },
+  });
+
+  await router.push({
+    name: "checkout",
+    query: { session: sessionId },
+  });
+  loading.value = false;
+};
 </script>

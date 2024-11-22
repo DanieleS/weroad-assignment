@@ -4,20 +4,20 @@ test("Should navigate to the checkout page", async ({ page, goto }) => {
   await goto("/search", { waitUntil: "hydration" });
 
   const searchResult = page.getByTestId("search-result-0");
-  await searchResult.getByRole("link").click();
+  await searchResult.getByRole("button").click();
 
-  await page.waitForURL((url) => url.pathname.startsWith("/checkout/"));
+  await page.waitForURL((url) => url.pathname.startsWith("/checkout"));
 
-  expect(page.url()).toContain("/checkout/");
+  expect(page.url()).toContain("/checkout");
 });
 
 test("Should complete the checkout process", async ({ page, goto }) => {
   await goto("/search", { waitUntil: "hydration" });
 
   const searchResult = page.getByTestId("search-result-0");
-  await searchResult.getByRole("link").click();
+  await searchResult.getByRole("button").click();
 
-  await page.waitForURL((url) => url.pathname.startsWith("/checkout/"));
+  await page.waitForURL((url) => url.pathname.startsWith("/checkout"));
 
   await page.getByRole("button", { name: "Next" }).click();
 

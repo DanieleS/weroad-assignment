@@ -5,7 +5,8 @@
       :schema="PaymentStepZ"
       v-model="state"
       :next-label="$t('common.button.confirm')"
-      @submit="$emit('step:complete', $event)"
+      :is-button-loading="isLoading"
+      @submit="(isLoading = true), $emit('step:complete', $event)"
     >
       <UFormGroup
         class="max-w-96"
@@ -46,7 +47,6 @@
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from "#ui/types";
 import type { PaymentStep } from "~/common/checkout";
 import { PaymentStepZ } from "~/common/schemas/checkout";
 
@@ -62,8 +62,9 @@ type Emits = {
   "step:complete": [state: PaymentStep];
   "step:edit": [];
 };
-
-const emit = defineEmits<Emits>();
+defineEmits<Emits>();
 
 const state = reactive<Partial<PaymentStep>>({});
+
+const isLoading = ref(false);
 </script>

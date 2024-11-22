@@ -9,7 +9,7 @@
         }}
       </h1>
       <div class="grid grid-cols-4 gap-4">
-        <div class="steps col-span-4 flex flex-col gap-4 md:col-span-3">
+        <div class="steps col-span-4 flex flex-col gap-4 lg:col-span-3">
           <CheckoutStepTravelers
             :is-active="currentStep === 'travelers'"
             @step:complete="onSubmit('travelers', 'userInfo', $event)"
@@ -28,7 +28,7 @@
         <CheckoutRecap
           :travel="data"
           :travelers="checkoutState.travelers?.travelers"
-          class="col-span-4 mt-8 self-start md:col-span-1 md:mt-0"
+          class="col-span-4 mt-8 self-start lg:col-span-1 lg:mt-0"
         />
       </div>
     </FetchResult>
@@ -46,6 +46,7 @@ definePageMeta({
 
 const { t } = useI18n();
 
+const checkoutSession = useCheckoutSession();
 const travel = await useTravel();
 
 usePageTitle(
@@ -65,15 +66,18 @@ const onSubmit = async <T extends Exclude<Step, "done">>(
   to: Step,
   data: Checkout[T],
 ) => {
+  checkoutState.value[from] = data;
   if (to === "done") {
-    await $fetch("/api/checkout", {
+    // Remove the payment step from the checkout state, as this is only a demo project
+    delete checkoutState.value.payment;
+
+    await $fetch("/api/checkout/confirm", {
       method: "POST",
-      body: checkoutState.value,
+      body: { session: checkoutSession.value, state: checkoutState.value },
     });
 
     navigateTo("/checkout/success");
   } else {
-    checkoutState.value[from] = data; // It should be before the `if` statement, but in this way we don't actually store payment info for this demo :P
     currentStep.value = to;
   }
 };

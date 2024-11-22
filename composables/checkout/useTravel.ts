@@ -1,11 +1,15 @@
 import { TravelZ } from "~/common/schemas/travel";
+import { useCheckoutSession } from "./useCheckoutSession";
 
 export const useTravel = async () => {
-  const route = useRoute();
-  const travelGuid = computed(() => route.params.guid as string);
+  const sessionGuid = useCheckoutSession();
+
+  const { travelId } = await $fetch(
+    `/api/checkout/session?sessionId=${sessionGuid.value}`,
+  );
 
   const travel = await useFetchWithSchema(
-    computed(() => `/api/travels/${travelGuid.value}`),
+    computed(() => `/api/travels/${travelId}`),
     {
       schema: TravelZ,
     },

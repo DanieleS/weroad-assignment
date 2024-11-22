@@ -2,7 +2,7 @@
   <UForm :schema :state @submit="$emit('submit', $event.data)">
     <slot />
     <div class="mt-8 flex justify-end">
-      <UButton type="submit">
+      <UButton type="submit" :loading="isButtonLoading">
         {{ nextLabel ?? $t("common.button.next") }}
       </UButton>
     </div>
@@ -20,6 +20,7 @@ const state = defineModel<Record<string, any>>({
 
 type Props = {
   nextLabel?: string;
+  isButtonLoading?: boolean;
   schema: z.Schema<T, ZodTypeDef, unknown>;
 };
 
