@@ -32,6 +32,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  image: {
+    formats: ["webp", "avif", "jpeg"],
+  },
   colorMode: {
     preference: "light",
   },
@@ -49,5 +52,6 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "@nuxtjs/i18n",
     "@nuxt/icon",
+    "@nuxt/image",
   ],
 });

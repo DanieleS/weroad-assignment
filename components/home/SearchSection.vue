@@ -1,7 +1,13 @@
 <template>
-  <section class="search-section p-4 py-16 md:py-32">
+  <section class="relative bg-cover bg-bottom p-4 py-16 md:bg-center md:py-32">
+    <NuxtImg
+      src="/images/homepage.jpg"
+      alt=""
+      sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw"
+      class="absolute inset-0 h-full w-full select-none object-cover"
+    />
     <div
-      class="container mx-auto flex flex-col justify-between md:flex-row md:items-center"
+      class="container relative z-10 mx-auto flex flex-col justify-between md:flex-row md:items-center"
     >
       <h2
         class="text-4xl font-semibold text-white md:mb-8 md:basis-1/2 lg:text-5xl"
@@ -23,7 +29,6 @@ defineComponent({ name: "SearchSection" });
 
 <style scoped>
 .search-section {
-  background: url("~/assets/images/homepage.webp") center center;
-  background-size: cover;
+  background-image: url("/images/homepage.jpg");
 }
 </style>

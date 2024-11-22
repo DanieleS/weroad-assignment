@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="my-16 flex flex-col gap-8 lg:flex-row">
+    <div class="my-16 flex flex-col items-center gap-8 lg:flex-row">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
         perferendis explicabo, eligendi adipisci, alias dolore distinctio esse
@@ -16,13 +16,23 @@
         voluptates odit qui quam maxime? Distinctio soluta earum, magnam id quod
         cumque quia aut, placeat animi sequi dolor.
       </p>
-      <div>
-        <Placeholder class="aspect-[16/9] w-full lg:w-96" />
+      <div class="shrink-0">
+        <NuxtImg
+          width="400"
+          class="w-full"
+          src="/images/home/image1.jpg"
+          sizes="100vw lg:300px"
+        />
       </div>
     </div>
-    <div class="my-16 flex flex-col gap-8 lg:flex-row">
-      <div class="max-lg:order-1">
-        <Placeholder class="aspect-[16/9] w-full lg:w-96" />
+    <div class="my-16 flex flex-col items-center gap-8 lg:flex-row">
+      <div class="shrink-0 max-lg:order-1">
+        <NuxtImg
+          width="400"
+          class="w-full"
+          src="/images/home/image2.jpg"
+          sizes="100vw lg:300px"
+        />
       </div>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
@@ -40,7 +50,7 @@
         cumque quia aut, placeat animi sequi dolor.
       </p>
     </div>
-    <div class="my-16 flex flex-col gap-8 lg:flex-row">
+    <div class="my-16 flex flex-col items-center gap-8 lg:flex-row">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
         perferendis explicabo, eligendi adipisci, alias dolore distinctio esse
@@ -56,8 +66,13 @@
         voluptates odit qui quam maxime? Distinctio soluta earum, magnam id quod
         cumque quia aut, placeat animi sequi dolor.
       </p>
-      <div>
-        <Placeholder class="aspect-[16/9] w-full lg:w-96" />
+      <div class="shrink-0">
+        <NuxtImg
+          width="400"
+          class="w-full"
+          src="/images/home/image3.jpg"
+          sizes="100vw lg:300px"
+        />
       </div>
     </div>
   </section>

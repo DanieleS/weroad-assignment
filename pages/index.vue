@@ -12,4 +12,6 @@ defineComponent({ name: "index" });
 definePageMeta({
   layout: "empty",
 });
+
+usePageTitle();
 </script>
