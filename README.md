@@ -1,6 +1,6 @@
 # NoiViaggioamo - WeRoad Technical Case
 
-<small><small><small>It's basically impossible to find a combination of two words in the field of travel that has not already been used</small></small></small>
+<sub><sup>It's basically impossible to find a combination of two words in the field of travel that has not already been used</sup></sub>
 
 This project is my implementation of the Technical case. It is a travel booking application that allows users to search for travel destinations, view details, and complete the booking process.
 
@@ -49,7 +49,7 @@ pnpm test
 Run end-to-end tests:
 
 ```bash
-pnpm test
+pnpm test:e2e
 ```
 
 ## Tech Stack
@@ -59,8 +59,3 @@ pnpm test
 - Styling: Tailwind CSS
 - Testing: Vitest, Playwright
 - Package Manager: pnpm
-
-## Possible improvements
-
-- Homepage
-- Trip Detail page
