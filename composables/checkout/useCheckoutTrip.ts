@@ -1,7 +1,11 @@
 import { TripZ } from "~/common/schemas/trip";
 import { useCheckoutSession } from "./useCheckoutSession";
 
-export const useTrip = async () => {
+/**
+ * Get the checkout trip using the checkout session
+ * @returns The checkout trip
+ */
+export const useCheckoutTrip = async () => {
   const sessionGuid = useCheckoutSession();
 
   const { tripId } = await $fetch(

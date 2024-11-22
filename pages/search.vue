@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-defineComponent({ name: "index" });
+defineComponent({ name: "search" });
 
 usePageTitle("Search");
 

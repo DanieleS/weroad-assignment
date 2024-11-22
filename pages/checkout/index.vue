@@ -47,7 +47,7 @@ definePageMeta({
 const { t } = useI18n();
 
 const checkoutSession = useCheckoutSession();
-const trip = await useTrip();
+const trip = await useCheckoutTrip();
 
 usePageTitle(
   t("checkout.pageTitle", {

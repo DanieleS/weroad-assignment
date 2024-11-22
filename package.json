@@ -18,6 +18,7 @@
     "@nuxtjs/i18n": "9.0.0-rc.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "date-fns": "^4.1.0",
+    "marked": "^15.0.2",
     "nuxt": "^3.14.159",
     "v-calendar": "^3.1.2",
     "validator": "^13.12.0",

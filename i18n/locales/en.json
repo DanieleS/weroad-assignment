@@ -36,6 +36,12 @@
       "bookTrip": "Book this trip"
     }
   },
+  "trip": {
+    "title": "Travel to {0}",
+    "departure": "Departure",
+    "return": "Return",
+    "price": "Price per person"
+  },
   "checkout": {
     "pageTitle": "Travel to {destination}",
     "title": "Complete your order and travel to {destination}!",

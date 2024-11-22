@@ -19,3 +19,7 @@ export const TripZ = z.object({
   picture: z.string(),
   region: RegionZ,
 });
+
+export const TripDetailZ = TripZ.extend({
+  fullDescription: z.string(),
+});

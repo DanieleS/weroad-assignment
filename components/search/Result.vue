@@ -1,11 +1,12 @@
 <template>
   <article class="relative h-full rounded-xl border border-gray-200 bg-gray-50">
-    <img
-      :src="trip.picture"
-      class="absolute h-full w-full rounded-xl object-cover"
-    />
+    <NuxtLink :to="`/trip/${trip.id}`" class="absolute inset-0">
+      <img :src="trip.picture" class="h-full w-full rounded-xl object-cover" />
+    </NuxtLink>
     <div class="relative z-10 mx-4 mb-4 mt-48 rounded-lg bg-white p-4">
-      <div class="text-xl font-bold">{{ trip.name }}</div>
+      <div class="text-xl font-bold">
+        <NuxtLink :to="`/trip/${trip.id}`"> {{ trip.name }}</NuxtLink>
+      </div>
       <div class="text-xs">{{ trip.description }}</div>
       <div class="my-4" data-allow-mismatch="text">
         {{ formatDate(trip.departureDate) }} -
@@ -21,10 +22,7 @@
           </i18n-t>
         </div>
         <!-- Class on button are needed when/if it wraps -->
-        <UButton @click="startCheckout" class="ml-auto mt-2" :loading>
-          {{ $t("search.buttons.bookTrip") }}
-          <UIcon name="i-fa6-solid-plane-departure" class="ml-2" />
-        </UButton>
+        <BookButton class="ml-auto mt-2" :trip-id="trip.id" />
       </div>
     </div>
   </article>
@@ -40,24 +38,5 @@ type Props = {
   trip: Trip;
 };
 
-const props = defineProps<Props>();
-
-const router = useRouter();
-
-const loading = ref(false);
-
-const startCheckout = async () => {
-  loading.value = true;
-
-  const { sessionId } = await $fetch("/api/checkout/session", {
-    method: "POST",
-    body: { tripId: props.trip.id },
-  });
-
-  await router.push({
-    name: "checkout",
-    query: { session: sessionId },
-  });
-  loading.value = false;
-};
+defineProps<Props>();
 </script>

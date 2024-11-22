@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
 
       return true;
     })
-    .sort(() => Math.random() - 0.5)
+    .map(({ fullDescription, ...props }) => ({ ...props }))
     .slice(0, 10);
 
   await sleep(400); // Simulate network delay
