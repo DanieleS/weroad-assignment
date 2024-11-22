@@ -3,7 +3,9 @@
     <div
       class="container mx-auto flex flex-col justify-between md:flex-row md:items-center"
     >
-      <h2 class="text-4xl font-semibold text-white md:mb-8 md:basis-1/2">
+      <h2
+        class="text-4xl font-semibold text-white md:mb-8 md:basis-1/2 lg:text-5xl"
+      >
         {{ $t("homepage.title") }}
       </h2>
       <div class="md:basis-96">
