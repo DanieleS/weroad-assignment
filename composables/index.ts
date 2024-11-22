@@ -2,5 +2,5 @@
 export { useSearch } from "./search/useSearch";
 
 // Checkout
-export { useTravel } from "./checkout/useTravel";
+export { useTrip } from "./checkout/useTrip";
 export { useCheckoutSession } from "./checkout/useCheckoutSession";

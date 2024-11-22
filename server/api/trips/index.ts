@@ -1,16 +1,16 @@
-import { mockTravels } from "~/mocks/travels";
+import { mockTrips } from "~/mocks/trips";
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
   if (typeof query.destination === "string") {
   }
 
-  const response = mockTravels
-    .filter((travel) => {
+  const response = mockTrips
+    .filter((trip) => {
       // Filters by destination
       // Dates are ignored as we don't have enough mocked data
       if (typeof query.destination === "string") {
-        return travel.region === query.destination;
+        return trip.region === query.destination;
       }
 
       return true;

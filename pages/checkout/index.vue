@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FetchResult :result="travel" #="{ data }">
+    <FetchResult :result="trip" #="{ data }">
       <h1 class="mb-8 mt-4 text-2xl">
         {{
           t("checkout.title", {
@@ -26,7 +26,7 @@
           />
         </div>
         <CheckoutRecap
-          :travel="data"
+          :trip="data"
           :travelers="checkoutState.travelers?.travelers"
           class="col-span-4 mt-8 self-start lg:col-span-1 lg:mt-0"
         />
@@ -47,11 +47,11 @@ definePageMeta({
 const { t } = useI18n();
 
 const checkoutSession = useCheckoutSession();
-const travel = await useTravel();
+const trip = await useTrip();
 
 usePageTitle(
   t("checkout.pageTitle", {
-    destination: travel.value.data?.name,
+    destination: trip.value.data?.name,
   }),
 );
 

@@ -1,12 +1,12 @@
-import { TravelZ } from "~/common/schemas/travel";
+import { TripZ } from "~/common/schemas/trip";
 import { z } from "zod";
-import type { Travel } from "~/common/travels";
+import type { Trip } from "~/common/trips";
 
 export const useSearch = async () => {
   const route = useRoute();
 
-  const searchResult = await useFetchWithSchema("/api/travels", {
-    schema: z.object({ items: z.array(TravelZ) }),
+  const searchResult = await useFetchWithSchema("/api/trips", {
+    schema: z.object({ items: z.array(TripZ) }),
     query: computed(() => route.query),
   });
 

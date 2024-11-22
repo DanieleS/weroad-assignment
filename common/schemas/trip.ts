@@ -8,7 +8,7 @@ export const RegionZ = z.union([
   z.literal("oceania"),
 ]);
 
-export const TravelZ = z.object({
+export const TripZ = z.object({
   id: z.string(),
   name: z.string(),
   description: z.string(),

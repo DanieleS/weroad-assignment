@@ -1,8 +1,8 @@
 # NoiViaggioamo - WeRoad Technical Case
 
-<sub><sup>It's basically impossible to find a combination of two words in the field of travel that has not already been used</sup></sub>
+<sub><sup>It's basically impossible to find a combination of two words in the field of trips that has not already been used</sup></sub>
 
-This project is my implementation of the Technical case. It is a travel booking application that allows users to search for travel destinations, view details, and complete the booking process.
+This project is my implementation of the Technical case. It is a trips booking application that allows users to search for trips destinations, view details, and complete the booking process.
 
 ## Getting Started
 

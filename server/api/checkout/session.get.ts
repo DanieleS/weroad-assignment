@@ -12,9 +12,9 @@ export default defineEventHandler(async (event) => {
     return setResponseStatus(event, 404);
   }
 
-  const travelId = sessionStore.get(sessionId);
+  const tripId = sessionStore.get(sessionId);
 
   return {
-    travelId,
+    tripId,
   };
 });

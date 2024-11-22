@@ -33,7 +33,7 @@
       "oceania": "Oceania"
     },
     "buttons": {
-      "bookTravel": "Book this trip"
+      "bookTrip": "Book this trip"
     }
   },
   "checkout": {
